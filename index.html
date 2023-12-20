@@ -1,0 +1,101 @@
+<!--1. Wordle board
+        -6 rows
+        -5 tiles per row
+    2. Keyboard
+        -28 tiles
+            26 letters
+            1 enter 1 delete
+    3.-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">Wordle</h1>
+    <!--Game board-->
+    <div id="gameboard">
+      <!--Row 1-->
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <!--Row 2-->
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <!--Row 3-->
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <!--Row 4-->
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <!--Row 5-->
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <!--Row 6-->
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+    </div>
+
+    <!--Keyboard-->
+    <div id="keyboard">
+      <!--Keys Row 1-->
+      <div class="row" id="key-row-1">
+        <button class="key" id="q">Q</button>
+        <button class="key" id="w">W</button>
+        <button class="key" id="e">E</button>
+        <button class="key" id="r">R</button>
+        <button class="key" id="t">T</button>
+        <button class="key" id="y">Y</button>
+        <button class="key" id="u">U</button>
+        <button class="key" id="i">I</button>
+        <button class="key"id="o">O</button>
+        <button class="key" id="p">P</button>
+      </div>
+      <!--Keys Row 2-->
+      <div class="row" id="key-row-2">
+        <button class="key" id="a">A</button>
+        <button class="key" id="s">S</button>
+        <button class="key" id="d">D</button>
+        <button class="key" id="f">F</button>
+        <button class="key" id="g">G</button>
+        <button class="key" id="h">H</button>
+        <button class="key" id="j">J</button>
+        <button class="key" id="k">K</button>
+        <button class="key" id="l">L</button>
+      </div>
+      <!--Keys Row 3-->
+      <div class="row" id="key-row-3">
+        <button class="key" id="enter">ENTER</button>
+        <button class="key" id="z">Z</button>
+        <button class="key" id="x">X</button>
+        <button class="key" id="c">C</button>
+        <button class="key" id="v">V</button>
+        <button class="key" id="b">B</button>
+        <button class="key" id="n">N</button>
+        <button class="key" id="m">M</button>
+        <button class="key" id="delete">DELETE</button>
+      </div>
+    </div>
+  </body>
+</html>

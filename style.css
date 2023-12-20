@@ -1,0 +1,56 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Gameboard */
+#gameboard {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.tile {
+  width: 50px;
+  height: 50px;
+  border: 2px solid green;
+}
+
+#keyboard {
+  /* border: 1px blue solid; */
+  width: 450px;
+  height: 250px;
+  margin-top: 40px;
+  /* display: flex;
+    flex-wrap: wrap; */
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+.key {
+  margin-right: 5px;
+  width: 60px;
+  height: 60px;
+}
+
+#enter {
+  width: 65px;
+  height: 60px;
+}
+
+#delete {
+  width: 65px;
+  height: 60px;
+}
+
+#key-row-2{
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
