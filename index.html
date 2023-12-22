@@ -14,10 +14,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script defer src="app.js" type="module"></script>
+    <!-- <script defer src="words.js" type="module"></script> -->
     <title>Wordle</title>
   </head>
   <body>
-    
+    <!--modal-->
+    <div class="modal" id="welcome-modal">
+      <div class="modal-content">
+        <h1>Wordle!</h1>
+        <h2>
+          Get 6 chances to <br />
+          guess a 5-letter word.
+        </h2>
+        <h2>
+          The color of the tiles will change to show you how close your guess
+          was to the word.
+        </h2>
+        <h3>Examples</h3>
+        <ul>
+          <li>Green means its in the right spot.</li>
+          <li>Yellow means its in the word but in the wrong spot.</li>
+          <li>Gray means its not in the word.</li>
+        </ul>
+        <button>How to play</button>
+        <button class="play">Play</button>
+      </div>
+    </div>
+
+    <!--Title-->
     <h1 id="title">Wordle</h1>
     <!--Game board-->
     <div id="gameboard">
