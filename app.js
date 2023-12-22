@@ -9,9 +9,11 @@ import { words } from "./words.js"; //word bank of winning words, importing from
 const winningWord = words[Math.floor(Math.random() * words.length)].split("");
 console.log(winningWord); // randomly pulls a word, thenadds to a array returning single letter strings...example ['b','e','r','r','y']
 let playerGuess = []; //puts player's guess into Array
+const currentRow = document.querySelector(`.row-${currentRound}`);
 
 //Functions and event listeners
 
+//This creates functionality for keys, and comparing guesses
 for (let key of keys) {
   key.addEventListener("click", () => {
     //adds same event listener to all the keys
@@ -27,9 +29,10 @@ for (let key of keys) {
         alert(`You Lose the word was ${winningWord.join("")}`); //player word =/= winningWord and 0 rounds remain; player loses
       }
     } else if (key.id === "delete") {
+      //removes last entry//
+      const currentRow = document.querySelector(`.row-${currentRound}`);
       playerGuess.pop();
-      let currentTile = 
-      //remove the last letter entry
+      currentRow.children[playerGuess.length].innerText = "";
     } else {
       if (playerGuess.length === 5) {
         alert("Do you want to submit? Press Enter"); //prompt method do you want to submit/or a modal where if they say okay, submit, then the enterkey will be clicked automatically for them. delay afte 10 seconds no manual enter
@@ -42,7 +45,52 @@ for (let key of keys) {
   });
 }
 
-//1st isolate the word from the array (winning word) then split its letters into an array //berry could be an array let berry =["b","e"...]
+//Play again function//
+
+
+
+//This creates functionality to compare letters and turn tiles/keys to correlating colors
+
+/* 1. If letters in guess are = to winword && in the right position turn correlating tiles green. look at indexes 
+if winningWord[0]===playerGuess[0]||playerGuess[2]||etc{
+    background color green} 
+    
+2. /* 1. If letters in guess are = to winword && in the wrong position turn correlating tiles yellow. look at indexes 
+if winningWord[i]===playerGuess[1]||playerGuess[2]||etc{
+    background color yellow} */
+
+
+
+// let compareLetters = () => {
+//     if(winningWord[0]=== playerGuess[1]|| playerGuess[2]|| playerGuess[3]||playerGuess[4]||playerGuess[5]){
+
+// //turn background color yellow
+//     }
+
+// }
+
+// let compareLetters = () => {
+//   const currentRow = document.querySelector(`.row-${currentRound}`);
+
+//   for (let i = 0; i < playerGuess.length; i++) {
+//     if (winningWord[i] === playerGuess[i]) {
+//       // Turn background color yellow for the matching letter at index i
+//       const tile = currentRow.children[i];
+//       tile.style.backgroundColor = "green";
+//     } else if (winningWord[0] === playerGuess[i]) {
+//       // Turn background color yellow for the matching letter at index i
+//       const tile = currentRow.children[i];
+//       tile.style.backgroundColor = "yellow";
+//     }
+//   }
+// };
+
+// document.getElementById("testButton").addEventListener("click", () => {
+//   // Manually call compareLetters for testing
+//   compareLetters();
+// });
+
+compareLetters();
 
 //2nd determine if user guess has same letters in winning word
 //something like: let usersGuess = [''] (accept letters as items in array...thus giving it a position)
