@@ -1,16 +1,24 @@
 //HTML Variables
 const tiles = document.querySelectorAll(".tile"); //accesses all tiles//
 const keys = document.querySelectorAll(".key"); //accesses all keys//
-const playButton = document.getElementById("play");
+const playButton = document.querySelector(".play");
 const welcomeModal = document.getElementById("welcome-modal");
-const winModal = document.getElementById('winner-restart');
-const loseModal = document.getElementById('loser-restart')
+const winModal = document.getElementById("winner-restart");
+const loseModal = document.getElementById("loser-restart");
+const rows = document.querySelectorAll(`.row`);
+const wins = document.getElementById(`wins`);
+const losses = document.getElementById(`losses`);
+const howToPlay = document.querySelector(".help");
+const winModalBtn = document.getElementById ('win-button');
+const loseModalBtn= document.getElementById ('lose-button');
 
 //Game Logic Variables
 const wordSize = 5; //set standard length for words//
 let currentRound = 1; //round user is currently on//
-let wins = 0;
-let losses= 0;
+const stats = {
+  wins: 0,
+  losses: 0,
+};
 
 import { words } from "./words.js"; //word bank of winning words, importing from additional js file//
 let winningWord = words[Math.floor(Math.random() * words.length)].split("");
@@ -19,37 +27,64 @@ let playerGuess = []; //puts player's guess into Array
 const currentRow = document.querySelector(`.row-${currentRound}`);
 
 //Functions and event listeners
-//Open winner modal
-function openWinModal(){
-    const winModal = document.getElementById('winner-restart');
-    winModal.style.display ='block';
+
+//Welcome Screen close
+playButton.addEventListener("click", () => {
+  welcomeModal.style.display = "none";
+});
+
+howToPlay.addEventListener("click", () => {
+  welcomeModal.style.display = "block";
+});
+
+//Open winner modal and add a win
+function openWinModal() {
+  const winModal = document.getElementById("winner-restart");
+  winModal.style.display = "block";
+ winModal.children[0].innerText = `You Won! The Winning Word was ${winningWord.join("")}`
+ wins.children[1].innerText = stats.wins;
 }
-//Open loser Modal
-function openLoseModal(){
-    const loseModal = document.getElementById('loser-restart');
-    loseModal.style.display ='block';
+//Open loser Modal and a loss
+function openLoseModal() {
+  const loseModal = document.getElementById("loser-restart");
+  loseModal.style.display = "block";
+  loseModal.children[0].innerText = `You Lose! The Winning Word was ${winningWord.join("")}`
+  losses.children[1].innerText = stats.losses;
+
 }
+winModalBtn.addEventListener("click", () => {
+    resetGame();
+    closeWinModal();
+  });
+  
+  loseModalBtn.addEventListener("click", () => {
+    resetGame();
+    closeLoseModal();
+  });
+  
 
 //close winner modal
-function closeWinModal(){
-    const winModal = document.getElementById('winner-restart');
-    winModal.style.display ='none';
+function closeWinModal() {
+  const winModal = document.getElementById("winner-restart");
+  winModal.style.display = "none";
 }
 //close loser Modal
-function closeLoseModal(){
-    const loseModal = document.getElementById('loser-restart');
-    loseModal.style.display ='none';
+function closeLoseModal() {
+  const loseModal = document.getElementById("loser-restart");
+  loseModal.style.display = "none";
 }
 const resetGame = () => {
   currentRound = 1;
   playerGuess = [];
   winningWord = words[Math.floor(Math.random() * words.length)].split("");
   console.log(winningWord);
-  const currentRow = document.querySelector(`.row-${currentRound}`);
-  currentRow.querySelectorAll('.tile').forEach(tile =>{
-    tile.innerText = '';
-    tile.style.backgroundColor = '';
-  })
+  const allRows = document.querySelectorAll(`.row`);
+  allRows.forEach((row) => {
+    row.querySelectorAll(".tile").forEach((tile) => {
+      tile.innerText = "";
+      tile.style.backgroundColor = "";
+    });
+  });
 };
 
 //This creates functionality for keys, and comparing guesses
@@ -60,12 +95,14 @@ for (let key of keys) {
       compareLetters(); //calls compare letters function
       //If enter key is pushed, player is ready to submit their word
       if (playerGuess.join("") === winningWord.join("")) {
-       openWinModal(); //player wins game word and winning word are the same
+        stats.wins++;
+        openWinModal(); //player wins game word and winning word are the same
       } else if (currentRound < 6) {
         //player word =/= winningWord, player moves to next round out of 6.
         currentRound++; //move to next round
         playerGuess = []; //resets array for new player guess
       } else {
+        stats.losses++;
         openLoseModal(); //player word =/= winningWord and 0 rounds remain; player loses
       }
     } else if (key.id === "delete") {
@@ -84,7 +121,6 @@ for (let key of keys) {
     }
   });
 }
-
 
 //compare tiles function
 
@@ -112,49 +148,4 @@ let compareLetters = () => {
   }
 };
 
-//modal that says you win the winning word was xyx play again button
-let winnerModal = document.createElement("p");
-let winnerModalText = document.createTextNode(
-  `You Won! The Winning Word was ${winningWord.join("")}`
-);
-winnerModal.appendChild(winnerModalText);
 
-let restartButton = document.createElement("button");
-let restartButtonText = document.createTextNode(`Play Again`);
-restartButton.appendChild(restartButtonText);
-
-const winnerDiv = document.getElementById("winner-restart");
-winnerDiv.appendChild(winnerModal);
-winnerDiv.appendChild(restartButton);
-
-console.dir(winnerModalText);
-//modal that says you lose, the winning word was xyz play again button
-
-let loserModal = document.createElement("p");
-let loserModalText = document.createTextNode(
-  `You Lost! The Winning Word was ${winningWord.join("")}`
-);
-loserModal.appendChild(loserModalText);
-
-let tryAgainButton = document.createElement("button");
-let tryAgainButtonText = document.createTextNode(`Try Again`);
-tryAgainButton.appendChild(tryAgainButtonText);
-
-const loserDiv = document.getElementById("loser-restart");
-loserDiv.appendChild(loserModal);
-loserDiv.appendChild(tryAgainButton);
-
-console.dir(loserModalText);
-
-restartButton.addEventListener('click', ()=>{
-    resetGame();
-    closeWinModal();
-});
-
-tryAgainButton.addEventListener('click', ()=>{
-    resetGame();
-    closeLoseModal();
-});
-
-
-//update scoreboard

@@ -55,6 +55,27 @@ body {
   margin-right: 20px;
 }
 
-#winner-restart, #loser-restart {
+#winner-restart,
+#loser-restart {
   display: none;
+}
+
+#welcome-modal {
+  border: 2px solid blue; /* you already should have this */
+  display: block; /* we're adding this */
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+}
+.scoreboard ul {
+  display: flex;
+  list-style: none;
+}
+
+.scoreboard li {
+  margin-right: 20px;
+
+  /* margin-right:20px; */
 }
