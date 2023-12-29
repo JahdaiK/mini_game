@@ -41,6 +41,19 @@
       </div>
     </div>
 
+    <div class="scoreboard">
+      <ul>
+        <li id="wins">
+          <h4>WINS</h4>
+          <h1>0</h1>
+        </li>
+        <li id="losses">
+          <h4>LOSSES</h4>
+          <h1>0</h1>
+        </li>
+      </ul>
+    </div>
+
     <!--Title-->
     <h1 id="title">Wordle</h1>
     <!--Game board-->
@@ -90,6 +103,18 @@
       </div>
     </div>
 
+    <div class = 'modal' id = 'winner-restart'>
+    </div>
+
+    <div class = 'modal' id = 'loser-restart'>
+    </div>
+
+    <!-- <div class = 'modal' id = 'winner-restart'>
+      <h1>I'm Sorry You Lose!</h1>
+      <h2>The word was: </h2>
+      <button>Play Again?</button>
+    </div> --> 
+
     <!--Keyboard-->
     <div id="keyboard">
       <!--Keys Row 1-->
@@ -130,6 +155,5 @@
         <button class="key" id="delete">DELETE</button>
       </div>
     </div>
-    <button id="testButton">Test compareLetters</button>
   </body>
 </html>
