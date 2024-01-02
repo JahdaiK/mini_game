@@ -1,9 +1,50 @@
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(43, 43, 43);
+}
+
+#header{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#header button{
+  align-self: center;
+  background-color: gold;
+  border-radius: 10px;
+  font-weight: bold;
+  
+}
+.scoreboard {
+  display: flex;
+ border: 1px solid green;
+}
+.scoreboard ul {
+  display: flex;
+  list-style: none;
+  color: white;
+}
+
+.scoreboard li {
+  margin-right: 20px;
+}
+
+.help{
+  height: 30px;}
+#title{
+  color: white;
+  text-align: center;
 }
 /* Gameboard */
+#game{
+  display: flex;
+  justify-content: center;
+  
+}
 #gameboard {
   width: 300px;
   height: 400px;
@@ -13,13 +54,18 @@ body {
   justify-content: space-evenly;
 }
 
+#oskeyboard{
+  display: flex;
+  justify-content: center;
+}
+
 #keyboard {
-  /* border: 1px blue solid; */
+  position: relative;
   width: 450px;
   height: 250px;
   margin-top: 40px;
-  /* display: flex;
-    flex-wrap: wrap; */
+
+
 }
 
 .row {
@@ -33,6 +79,8 @@ body {
   height: 50px;
   border: 2px solid green;
   margin: 0 2px;
+  text-align: center;
+  font-size: 40px;
 }
 .key {
   margin-right: 5px;
@@ -55,27 +103,68 @@ body {
   margin-right: 20px;
 }
 
+#welcome-modal {
+  background-color: rgb(69, 63, 155);
+  display: flex; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.modal-content{
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+.modal-content h3{
+  text-align: left;
+  color: white;
+}
+
+.modal-content h1{
+  text-align: center;
+  color: green;
+}
+
+.modal-content ul{
+ list-style-type: None;
+ text-align: left;
+ color: white;
+}
+
+.modal-content span{
+  font-weight: bold;
+}
+
+.modal-content #green{
+  color: green;
+}
+.modal-content #yellow{
+  color: yellow;
+}
+.modal-content #gray{
+  color: gray;
+}
+
+#winner-restart, #loser-restart button{
+  width: 50px;
+  align-self: center;
+  background-color: green;
+  border-radius: 10%;
+  font-weight: bold;
+ 
+}
 #winner-restart,
 #loser-restart {
   display: none;
-}
-
-#welcome-modal {
-  border: 2px solid blue; /* you already should have this */
-  display: block; /* we're adding this */
-}
-
-.scoreboard {
-  display: flex;
   justify-content: center;
 }
-.scoreboard ul {
-  display: flex;
-  list-style: none;
-}
 
-.scoreboard li {
-  margin-right: 20px;
 
-  /* margin-right:20px; */
-}

@@ -18,147 +18,154 @@
     <title>Wordle</title>
   </head>
   <body>
-    <!--modal-->
+    <!--welcome modal-->
     <div class="modal" id="welcome-modal">
       <div class="modal-content">
-        <h1>Wordle!</h1>
-        <h2>
-          Get 6 chances to <br />
-          guess a 5-letter word.
-        </h2>
-        <h2>
+        <h1>WORDLE!</h1>
+        <h3>Get 6 chances to guess a 5-letter word.</h3>
+        <h3>
           The color of the tiles will change to show you how close your guess
           was to the word.
-        </h2>
+        </h3>
         <h3>Examples</h3>
         <ul>
-          <li>Green means its in the right spot.</li>
-          <li>Yellow means its in the word but in the wrong spot.</li>
-          <li>Gray means its not in the word.</li>
+          <li>
+            <span class="color" id="green">GREEN</span> means its in the right
+            spot.
+          </li>
+          <li>
+            <span class="color" id="yellow">YELLOW</span> means its in the word
+            but in the wrong spot.
+          </li>
+          <li>
+            <span class="color" id="gray">GRAY</span> means its not in the word.
+          </li>
         </ul>
         <button class="play">Play</button>
       </div>
     </div>
-    <div class="modal rules">
+
+    <section id="header">
+      <div class="scoreboard">
+        <ul>
+          <li id="wins">
+            <h4>WINS</h4>
+            <h1>0</h1>
+          </li>
+          <li id="losses">
+            <h4>LOSSES</h4>
+            <h1>0</h1>
+          </li>
+        </ul>
+      </div>
       <button class="help">How to play</button>
-    </div>
-    <div class="scoreboard">
-      <ul>
-        <li id="wins">
-          <h4>WINS</h4>
-          <h1>0</h1>
-        </li>
-        <li id="losses">
-          <h4>LOSSES</h4>
-          <h1>0</h1>
-        </li>
-      </ul>
-    </div>
+    </section>
 
     <!--Title-->
-    <h1 id="title">Wordle</h1>
-    <!--Game board-->
-    <div id="gameboard">
-      <!--Row 1-->
-      <div class="row row-1">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-      </div>
-      <div class="row row-2">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-      </div>
-      <div class="row row-3">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-      </div>
-      <div class="row row-4">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-      </div>
-      <div class="row row-5">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-      </div>
-      <div class="row row-6">
-        <div class="tile tile-r6"></div>
-        <div class="tile tile-r6"></div>
-        <div class="tile tile-r6"></div>
-        <div class="tile tile-r6"></div>
-        <div class="tile tile-r6"></div>
-      </div>
-    </div>
+    <h1 id="title">WORDLE</h1>
 
-    <div class = 'modal' id = 'winner-restart'>
+    <!-- game -->
+    <section id="game">
+      <!--Game board-->
+      <div id="gameboard">
+        <!--Row 1-->
+        <div class="row row-1">
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class="row row-2">
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class="row row-3">
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class="row row-4">
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class="row row-5">
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class="row row-6">
+          <div class="tile tile-r6"></div>
+          <div class="tile tile-r6"></div>
+          <div class="tile tile-r6"></div>
+          <div class="tile tile-r6"></div>
+          <div class="tile tile-r6"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- win and lose modals -->
+    <div class="modal" id="winner-restart">
       <p></p>
-      <button id = 'win-button'>Play Again</button>
+      <button id="win-button">Play Again</button>
     </div>
 
-    <div class = 'modal' id = 'loser-restart'>
+    <div class="modal" id="loser-restart">
       <p></p>
-      <button id = 'lose-button'>Try Again</button>
+      <button id="lose-button">Try Again</button>
     </div>
-
-    <!-- <div class = 'modal' id = 'winner-restart'>
-      <h1>I'm Sorry You Lose!</h1>
-      <h2>The word was: </h2>
-      <button>Play Again?</button>
-    </div> --> 
 
     <!--Keyboard-->
-    <div id="keyboard">
-      <!--Keys Row 1-->
-      <div class="row" id="key-row-1">
-        <button class="key" id="q">Q</button>
-        <button class="key" id="w">W</button>
-        <button class="key" id="e">E</button>
-        <button class="key" id="r">R</button>
-        <button class="key" id="t">T</button>
-        <button class="key" id="y">Y</button>
-        <button class="key" id="u">U</button>
-        <button class="key" id="i">I</button>
-        <button class="key" id="o">O</button>
-        <button class="key" id="p">P</button>
+    <section id="oskeyboard">
+      <div id="keyboard">
+        <!--Keys Row 1-->
+        <div class="row" id="key-row-1">
+          <button class="key" id="q">Q</button>
+          <button class="key" id="w">W</button>
+          <button class="key" id="e">E</button>
+          <button class="key" id="r">R</button>
+          <button class="key" id="t">T</button>
+          <button class="key" id="y">Y</button>
+          <button class="key" id="u">U</button>
+          <button class="key" id="i">I</button>
+          <button class="key" id="o">O</button>
+          <button class="key" id="p">P</button>
+        </div>
+        <!--Keys Row 2-->
+        <div class="row" id="key-row-2">
+          <button class="key" id="a">A</button>
+          <button class="key" id="s">S</button>
+          <button class="key" id="d">D</button>
+          <button class="key" id="f">F</button>
+          <button class="key" id="g">G</button>
+          <button class="key" id="h">H</button>
+          <button class="key" id="j">J</button>
+          <button class="key" id="k">K</button>
+          <button class="key" id="l">L</button>
+        </div>
+        <!--Keys Row 3-->
+        <div class="row" id="key-row-3">
+          <button class="key" id="enter">ENTER</button>
+          <button class="key" id="z">Z</button>
+          <button class="key" id="x">X</button>
+          <button class="key" id="c">C</button>
+          <button class="key" id="v">V</button>
+          <button class="key" id="b">B</button>
+          <button class="key" id="n">N</button>
+          <button class="key" id="m">M</button>
+          <button class="key" id="delete">DELETE</button>
+        </div>
       </div>
-      <!--Keys Row 2-->
-      <div class="row" id="key-row-2">
-        <button class="key" id="a">A</button>
-        <button class="key" id="s">S</button>
-        <button class="key" id="d">D</button>
-        <button class="key" id="f">F</button>
-        <button class="key" id="g">G</button>
-        <button class="key" id="h">H</button>
-        <button class="key" id="j">J</button>
-        <button class="key" id="k">K</button>
-        <button class="key" id="l">L</button>
-      </div>
-      <!--Keys Row 3-->
-      <div class="row" id="key-row-3">
-        <button class="key" id="enter">ENTER</button>
-        <button class="key" id="z">Z</button>
-        <button class="key" id="x">X</button>
-        <button class="key" id="c">C</button>
-        <button class="key" id="v">V</button>
-        <button class="key" id="b">B</button>
-        <button class="key" id="n">N</button>
-        <button class="key" id="m">M</button>
-        <button class="key" id="delete">DELETE</button>
-      </div>
-    </div>
+    </section>
   </body>
 </html>

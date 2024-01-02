@@ -40,14 +40,37 @@ howToPlay.addEventListener("click", () => {
 //Open winner modal and add a win
 function openWinModal() {
   const winModal = document.getElementById("winner-restart");
-  winModal.style.display = "block";
+  winModal.style.backgroundColor ='white';
+  winModal.style.display = "flex";
+  winModal.style.flexDirection = 'column';
+
+  winModal.style.position ='fixed';
+  winModal.style.top = '50%';
+  winModal.style.left = '50%';
+  winModal.style.transform = 'translate(-50%, -50%)';
+  winModal.style.height = '50%';
+  winModal.style.width = '50%';
+  winModal.style.zIndex = '1';
+  winModal.style.textAlign = 'center';
  winModal.children[0].innerText = `You Won! The Winning Word was ${winningWord.join("")}`
  wins.children[1].innerText = stats.wins;
 }
 //Open loser Modal and a loss
 function openLoseModal() {
   const loseModal = document.getElementById("loser-restart");
-  loseModal.style.display = "block";
+  loseModal.style.display = "flex";
+  loseModal.style.flexDirection = 'column';
+  loseModal.style.backgroundColor ='white';
+  loseModal.style.position ='fixed';
+  loseModal.style.top = '50%';
+  loseModal.style.left = '50%';
+  loseModal.style.transform = 'translate(-50%, -50%)';
+  loseModal.style.height = '50%';
+  loseModal.style.width = '50%';
+  loseModal.style.zIndex = '1';
+  loseModal.style.textAlign = 'center';
+  
+
   loseModal.children[0].innerText = `You Lose! The Winning Word was ${winningWord.join("")}`
   losses.children[1].innerText = stats.losses;
 
