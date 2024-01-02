@@ -2,9 +2,9 @@
 ![Jahdai Wordle](https://github.com/JahdaiK/mini_game/blob/main/Screenshot%202024-01-02%20at%205.42.30%E2%80%AFAM.png)
 
 ##Technology Used:
-HTML
-CSS
-JavaScript
+-HTML
+-CSS
+-JavaScript
 
 
 ##User Stories:
