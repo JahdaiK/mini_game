@@ -1,5 +1,5 @@
 #Jahdai's Wordle!!
-![Jahdai Wordle](https://github.com/JahdaiK/portfolio/blob/main/portfolio%20images/JahMoriahLogo.png)
+![Jahdai Wordle](https://github.com/JahdaiK/mini_game/blob/main/Screenshot%202024-01-02%20at%205.42.30%E2%80%AFAM.png)
 
 ##Technology Used:
 HTML
@@ -8,14 +8,14 @@ JavaScript
 
 
 ##User Stories:
-As a prospective customer of Jahdai’s services, I want to see examples of her work to determine if it aligns with my own website's needs, so that I can make an informed decision to hire her. I am looking for good design, colors, and creativity.
+- As a commuter, I want to play a game that can challenge me and provide a good distraction when I take the train to work. I'm looking for a game that allows me to play multiple times and keeps track of my performance.
 
-As a friend of Jahdai, I want to see what she’s learning in boot camp and cheer her on whenever she feels discouraged.
-
-As a senior engineer and mentor to Jahdai, I want to understand her engineering style, decision-making process, and provide feedback on what she does well and areas for improvement.
+- As a prospective employer of Jahdai, I want to evaluate her knowledge of JavaScript logic and how she can make a task her own.
 
 ##Major Hurdles:
-I faced challenges primarily with responsive design and the principles of flexboxes. Often, I believed I had structured my HTML to create the proper containers for my elements to be positioned as I designed, but it did not work out. It was frequently challenging to determine which units to use (px, em, vw, etc.).
+- The major hurdles I faced were related to game logic. Although I managed to input letters from the on-screen keyboard into individual tiles, I struggled with organizing the rows. Ensuring that starting a new game brings the player back to the top of the board, rather than continuing from the row they left off, proved challenging.
+
+- Another hurdle was updating the winning word in the win/lose modal. Initially, I created the win and lose modals in JS, with the inner text including the variable "winningWord" already included. However, this caused the winning word not to update in the modal, even though it was a new round. To overcome this, I created the modal parent element in HTML, leaving the <p> child element empty so that it could be dynamically updated through JS as the game repeats.
 
 ##Next Steps:
-I want to elevate the design, create a page for my art work and add animations.
+Currently, my mini game is simply a Wordle clone. In the near future, I aim to create multiple themes from which users can choose. Each theme will have word banks and colors associated with it, providing a more engaging experience.
