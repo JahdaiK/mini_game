@@ -37,13 +37,12 @@ howToPlay.addEventListener("click", () => {
   welcomeModal.style.display = "block";
 });
 
-//Open winner modal and add a win
+//Open winner modal and add a win. Credit: Scott Draper, General Assembly, Modal lesson
 function openWinModal() {
   const winModal = document.getElementById("winner-restart");
   winModal.style.backgroundColor ='white';
   winModal.style.display = "flex";
   winModal.style.flexDirection = 'column';
-
   winModal.style.position ='fixed';
   winModal.style.top = '50%';
   winModal.style.left = '50%';
@@ -55,7 +54,7 @@ function openWinModal() {
  winModal.children[0].innerText = `You Won! The Winning Word was ${winningWord.join("")}`
  wins.children[1].innerText = stats.wins;
 }
-//Open loser Modal and a loss
+//Open loser Modal and a loss. Credit: Scott Draper, General Assembly, Modal lesson
 function openLoseModal() {
   const loseModal = document.getElementById("loser-restart");
   loseModal.style.display = "flex";
